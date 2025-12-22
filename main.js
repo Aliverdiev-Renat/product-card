@@ -25,7 +25,7 @@ function openGoogle() {
 
   if (answer === true) {
     window.open('https://google.com')
-  } else{
+  } else {
     return;
   }
 }
