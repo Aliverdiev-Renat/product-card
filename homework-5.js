@@ -1,60 +1,62 @@
 /* Создать функцию, которая принимает 2 параметра: город и температуру и выводит сообщение в консоль 
 "Сейчас в X температура  — Y градусов по Цельсию" */
-function weatherInTheCity(city, weather) {
-  console.log(`Сейчас в ${city} температура : ${weather} градусов по Цельсию`)
+function showTemperature(city, temperature) {
+  console.log(`Сейчас в ${city} температура : ${temperature} градусов по Цельсию`)
 };
 
-weatherInTheCity("Норильск", -22);
+showTemperature("Норильск", -22);
 
 /* Создать переменную, которая хранит внутри себя скорость света (гуглим).
 Создать функцию, которая принимает 1 аргумент - скорость, внутри функции происходит проверка: 
 если переданная скорость выше скорости света — выводим лог "Сверхсветовая скорость", 
 если ниже — "Субсветовая  скорость"? если равна — "Скорость света" */
-const LIGHT_SPEED = 299_792_458;
 
 const checkingLightSpeed = speed => {
-  if (speed > 299_792_458) {
-    console.log("Сверхсветовая скорость")
+  const LIGHT_SPEED = 299792458;
+  if (speed > LIGHT_SPEED) {
+    return "Сверхсветовая скорость"
   }
-  else if (speed < 299_792_458) {
-    console.log("Субсветовая  скорость")
+  else if (speed < LIGHT_SPEED) {
+    return "Субсветовая  скорость"
   }
   else {
-    console.log("Скорость света")
+    return "Скорость света"
   }
 };
 
-checkingLightSpeed(LIGHT_SPEED);
+console.log(checkingLightSpeed(299792458));
 
 /* Создать переменную №1, которая содержит продукт и переменную №2, которая содержит его цену (на ваше усмотрение). 
 Далее создаем функцию, которая принимает 1 параметр - текущий бюджет, 
 внутри функции происходит проверка: если бюджет превышает цену товара - выводим лог "(ваше название товара) приобретён. 
 Спасибо за покупку!", если нет - обсчитываем разницу и выводим лог "Вам не хватает X$, пополните баланс".
 То-есть с помощью функции мы пытаемся приобрести товар. */
-
-const productName = "Lenovo ThinkPad";
-const productPrice = 2000;
-
-const processPurchase = currentBudget => productPrice <= currentBudget ?
-console.log(`${productName} приобретён. Спасибо за покупку!`) : 
-console.log(`Вам не хватает ${productPrice - currentBudget}$, пополните баланс`);
-
-processPurchase(1857);
-
-//Создать 1 функцию и именовать её по своему усмотрению
-function brandAutoFancy (autoBrand) {
-  const brandTop = "Audi";
-  if (brandTop === autoBrand) {
-    console.log("Ты мой брательник")
+function processPurchase (Budget) {
+  const productName = "Lenovo ThinkPad";
+  const productPrice = 2000;
+  
+  if (Budget >= productPrice) {
+    return `${productName} приобретён. Спасибо за покупку!`
   } else {
-    console.log("Переходи в братство кольца глупец")
+    return `Вам не хватает ${productPrice - Budget}$, пополните баланс`
   }
 };
+
+console.log(processPurchase(1857));
+
+//Создать 1 функцию и именовать её по своему усмотрению
+function checkBrand (brand) {
+  const favoriteBrand = "Audi";
+  if (favoriteBrand === brand) {
+    return "Ты мой брательник"
+  } else {
+    return "Переходи в братство кольца глупец"
+  }
+};
+
+console.log(checkBrand("Audi"))
 
 //Создать 3 переменных (без разницы каких) и именовать их по своему усмотрению 
 const autoBrand = "Audi";
 const autoModel = "A6 Allroad";
 const yearManufacture = 2025;
-
-
-
