@@ -11,7 +11,7 @@ showTemperature("Норильск", -22);
 если переданная скорость выше скорости света — выводим лог "Сверхсветовая скорость", 
 если ниже — "Субсветовая  скорость"? если равна — "Скорость света" */
 
-const checkingLightSpeed = speed => {
+const getCheckingLightSpeed = speed => {
   const LIGHT_SPEED = 299792458;
   if (speed > LIGHT_SPEED) {
     return "Сверхсветовая скорость"
@@ -24,28 +24,28 @@ const checkingLightSpeed = speed => {
   }
 };
 
-console.log(checkingLightSpeed(299792458));
+console.log(getCheckingLightSpeed(299792458));
 
 /* Создать переменную №1, которая содержит продукт и переменную №2, которая содержит его цену (на ваше усмотрение). 
 Далее создаем функцию, которая принимает 1 параметр - текущий бюджет, 
 внутри функции происходит проверка: если бюджет превышает цену товара - выводим лог "(ваше название товара) приобретён. 
 Спасибо за покупку!", если нет - обсчитываем разницу и выводим лог "Вам не хватает X$, пополните баланс".
 То-есть с помощью функции мы пытаемся приобрести товар. */
-function processPurchase (Budget) {
+function getProcessPurchase(budget) {
   const productName = "Lenovo ThinkPad";
   const productPrice = 2000;
   
-  if (Budget >= productPrice) {
+  if (budget >= productPrice) {
     return `${productName} приобретён. Спасибо за покупку!`
   } else {
-    return `Вам не хватает ${productPrice - Budget}$, пополните баланс`
+    return `Вам не хватает ${productPrice - budget}$, пополните баланс`
   }
 };
 
-console.log(processPurchase(1857));
+console.log(getProcessPurchase(1857));
 
 //Создать 1 функцию и именовать её по своему усмотрению
-function checkBrand (brand) {
+function getCheckBrand(brand) {
   const favoriteBrand = "Audi";
   if (favoriteBrand === brand) {
     return "Ты мой брательник"
@@ -54,7 +54,7 @@ function checkBrand (brand) {
   }
 };
 
-console.log(checkBrand("Audi"))
+console.log(getCheckBrand("Audi"))
 
 //Создать 3 переменных (без разницы каких) и именовать их по своему усмотрению 
 const autoBrand = "Audi";
