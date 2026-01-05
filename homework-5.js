@@ -10,8 +10,7 @@ showTemperature("Норильск", -22);
 Создать функцию, которая принимает 1 аргумент - скорость, внутри функции происходит проверка: 
 если переданная скорость выше скорости света — выводим лог "Сверхсветовая скорость", 
 если ниже — "Субсветовая  скорость"? если равна — "Скорость света" */
-
-const getCheckingLightSpeed = speed => {
+const getSpeedCategory = speed => {
   const LIGHT_SPEED = 299792458;
   if (speed > LIGHT_SPEED) {
     return "Сверхсветовая скорость"
@@ -24,17 +23,16 @@ const getCheckingLightSpeed = speed => {
   }
 };
 
-console.log(getCheckingLightSpeed(299792458));
+console.log(getSpeedCategory(299792458));
+console.log(getSpeedCategory(299792459));
+console.log(getSpeedCategory(29979245));
 
 /* Создать переменную №1, которая содержит продукт и переменную №2, которая содержит его цену (на ваше усмотрение). 
 Далее создаем функцию, которая принимает 1 параметр - текущий бюджет, 
 внутри функции происходит проверка: если бюджет превышает цену товара - выводим лог "(ваше название товара) приобретён. 
 Спасибо за покупку!", если нет - обсчитываем разницу и выводим лог "Вам не хватает X$, пополните баланс".
 То-есть с помощью функции мы пытаемся приобрести товар. */
-function getProcessPurchase(budget) {
-  const productName = "Lenovo ThinkPad";
-  const productPrice = 2000;
-  
+function buyProduct (budget, productName = "Lenovo ThinkPad", productPrice = 2000) {
   if (budget >= productPrice) {
     return `${productName} приобретён. Спасибо за покупку!`
   } else {
@@ -42,21 +40,17 @@ function getProcessPurchase(budget) {
   }
 };
 
-console.log(getProcessPurchase(1857));
+console.log(buyProduct(1857));
+console.log(buyProduct(2500));
+console.log(buyProduct(5000, 'MacBook', 3999))
 
 //Создать 1 функцию и именовать её по своему усмотрению
-function getCheckBrand(brand) {
+function isFavoriteBrand(brand) {
   const favoriteBrand = "Audi";
-  if (favoriteBrand === brand) {
-    return "Ты мой брательник"
-  } else {
-    return "Переходи в братство кольца глупец"
-  }
+  return favoriteBrand === brand;
 };
 
-console.log(getCheckBrand("Audi"))
-
 //Создать 3 переменных (без разницы каких) и именовать их по своему усмотрению 
-const autoBrand = "Audi";
-const autoModel = "A6 Allroad";
-const yearManufacture = 2025;
+const carBrand = "Audi";
+const carModel = "A6 Allroad";
+const productionYear = 2025;
