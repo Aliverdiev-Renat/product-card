@@ -23,26 +23,18 @@ const getSpeedCategory = speed => {
   }
 };
 
-console.log(getSpeedCategory(299792458));
-console.log(getSpeedCategory(299792459));
-console.log(getSpeedCategory(29979245));
-
 /* Создать переменную №1, которая содержит продукт и переменную №2, которая содержит его цену (на ваше усмотрение). 
 Далее создаем функцию, которая принимает 1 параметр - текущий бюджет, 
 внутри функции происходит проверка: если бюджет превышает цену товара - выводим лог "(ваше название товара) приобретён. 
 Спасибо за покупку!", если нет - обсчитываем разницу и выводим лог "Вам не хватает X$, пополните баланс".
 То-есть с помощью функции мы пытаемся приобрести товар. */
-function buyProduct (budget, productName = "Lenovo ThinkPad", productPrice = 2000) {
+function purchaseProduct (budget, productName = "Lenovo ThinkPad", productPrice = 2000) {
   if (budget >= productPrice) {
     return `${productName} приобретён. Спасибо за покупку!`
   } else {
     return `Вам не хватает ${productPrice - budget}$, пополните баланс`
   }
 };
-
-console.log(buyProduct(1857));
-console.log(buyProduct(2500));
-console.log(buyProduct(5000, 'MacBook', 3999))
 
 //Создать 1 функцию и именовать её по своему усмотрению
 function isFavoriteBrand(brand) {
