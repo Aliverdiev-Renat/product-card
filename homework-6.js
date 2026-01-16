@@ -31,16 +31,16 @@ carInfo.personInfo = person;
 Она проверяет, есть ли в объекте свойство "максимальная скорость", если нет - добавляет его и задает значение,
 если есть - прекращает выполнение (ничего не делает) */
 const checkMaxSpeed = obj => {
-  if (!('max speed' in obj)) {
-    return obj['max speed'] = 350
+  if (!('maxSpeed' in obj)) {
+    return obj['maxSpeed'] = 350
   }
 };
 
 checkMaxSpeed(carInfo);
-
+console.log(carInfo)
 /* №6 Написать функцию, которая получает первым аргументом  — объект, а вторым аргументом — свойство объекта,
 которое нужно вывести и выводит его значение. */
-const getProperty = (obj, key) => obj?.[key];
+const getObjectProperty = (obj, key) => obj?.[key];
 
 /* №7 Создать массив, который содержит названия продуктов (просто строки) */
 const products = ['Яблоко', 'Груша', 'Арбуз', 'Мандарин', 'Апельсин', 'Клуюника', 'Черешня',];
@@ -57,7 +57,6 @@ const harryPotterSeries = [
     coverColor: 'красный',
     genre: 'фэнтези'
   },
-  
   {
     name: 'Гарри Поттер и Тайная комната',
     author: 'Джоан Роулинг',
@@ -65,15 +64,13 @@ const harryPotterSeries = [
     coverColor: 'зелёный',
     genre: 'фэнтези'
   },
-
   {
     name: 'Гарри Поттер и узник Азкабана',
     author: 'Джоан Роулинг',
     year: 1999,
-    'cover color': 'синий',
+    coverColor: 'синий',
     genre: 'фэнтези'
   },
-
   {
     name: 'Гарри Поттер и Кубок огня',
     author: 'Джоан Роулинг',
@@ -81,7 +78,6 @@ const harryPotterSeries = [
     coverColor: 'оранжевый',
     genre: 'фэнтези'
   },
-
   {
     name: 'Гарри Поттер и Орден Феникса',
     author: 'Джоан Роулинг',
@@ -89,7 +85,6 @@ const harryPotterSeries = [
     coverColor: 'бордовый',
     genre: 'фэнтези'
   },
-
   {
     name: 'Гарри Поттер и Принц-полукровка',
     author: 'Джоан Роулинг',
@@ -97,7 +92,6 @@ const harryPotterSeries = [
     coverColor: 'чёрный',
     genre: 'фэнтези'
   },
-
   {
     name: 'Гарри Поттер и Дары Смерти',
     author: 'Джоан Роулинг',
@@ -126,7 +120,6 @@ const wizardingWorldBooks = [
     coverColor: 'жёлтый/кремовый',
     genre: 'справочник/фэнтези'
   },
-
   {
     name: 'Квиддич с древности до наших дней',
     author: 'Кеннилворти Уизли (Дж.К. Роулинг)',
@@ -134,7 +127,6 @@ const wizardingWorldBooks = [
     coverColor: 'зелёный',
     genre: 'справочник/фэнтези'
   },
-
   {
     name: 'Сказки барда Бидля',
     author: 'Бард Бидль (Дж.К. Роулинг)',
@@ -150,8 +142,9 @@ const allBooks = [...harryPotterSeries, ...wizardingWorldBooks]
 Добавляем новое свойство для объекта "isRare (это редкий)" и в зависимости от года выпуска книги
 (или какой-то логики, связанной с вашей сущностью), устанавливаем true или false.
 Что я хочу этим сказать: если книга выпущена позже 2000 года, устанавливаем true (да, это редкий), нет - false (значит это не редкий). */
-const booksWithRarity = books => books.map(book => ({
-  ...book, isRare: book.year > 2000
+const addRareOfBooks = books => books.map(book => ({
+  ...book,
+  isRare: book.year > 2000
 }))
 
-const updatedBooks = booksWithRarity(allBooks)
+const updatedBooks = addRareOfBooks(allBooks)
